@@ -68,5 +68,8 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    // fix to work with swiperjs 8 - need to run with standalone:true. That can make some troubles.
+    standalone: true,
+  },
 }
