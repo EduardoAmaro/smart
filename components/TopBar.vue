@@ -61,7 +61,7 @@ export default {
   background-color: $dark-background;
   padding: 8px 0;
   width: 100%;
-  font-family: $font-title;
+  font-family: $font-family-title;
 
   .topbar-wrapper {
     display: flex;
@@ -87,6 +87,13 @@ export default {
           }
         }
       }
+    }
+
+    .social-email {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      align-items: center;
     }
 
     .social-email,
