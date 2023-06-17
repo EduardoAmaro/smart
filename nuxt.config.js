@@ -71,5 +71,13 @@ export default {
   build: {
     // fix to work with swiperjs 8 - need to run with standalone:true. That can make some troubles.
     standalone: true,
+    extend(config, ctx) {
+      // fix to work with swiperjs 8 add needed deps. you can get them from error when doing nuxt generate
+      config.externals = [
+        {
+          encoding: 'encoding',
+        },
+      ]
+    },
   },
 }
