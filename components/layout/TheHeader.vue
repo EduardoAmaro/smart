@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss">
 .section-header {
-  background-color: $light-background;
+  background-color: $medium-background;
   .header-wrapper {
     padding: 10px 0;
     display: flex;
