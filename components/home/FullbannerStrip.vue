@@ -17,7 +17,6 @@
 .section-strip {
   background-color: $ligth-background;
   padding: 6px 0;
-  width: 100%;
   font-family: $font-family-title;
 
   .strip-wrapper {
