@@ -49,6 +49,10 @@ export default {
     display: flex;
     justify-content: space-between;
 
+    .logo-container {
+      display: flex;
+    }
+
     .menu-desktop {
       flex: 1;
       display: flex;

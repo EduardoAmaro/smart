@@ -1,6 +1,6 @@
 <template>
   <div class="section-swiper">
-    <div class="swiper">
+    <div class="swiper swiper-fullbanner">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <a href="#">
@@ -20,8 +20,8 @@
       </div>
     </div>
     <!-- <div class="swiper-pagination"></div> -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="button-fullbanner-prev swiper-button-prev"></div>
+    <div class="button-fullbanner-next swiper-button-next"></div>
   </div>
 </template>
 <script>
@@ -30,7 +30,8 @@ import 'swiper/swiper-bundle.min.css'
 
 export default {
   mounted() {
-    const swiper = new Swiper('.swiper', {
+    /* eslint-disable no-unused-vars */
+    const swiper = new Swiper('.swiper-fullbanner', {
       loop: false,
       modules: [Navigation, Pagination, Autoplay],
 
@@ -39,8 +40,8 @@ export default {
       },
 
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.button-fullbanner-next',
+        prevEl: '.button-fullbanner-prev',
       },
 
       /* pagination: {
@@ -49,10 +50,7 @@ export default {
         clickable: true,
       }, */
     })
-
-    swiper.on('activeIndexChange', (swiper) => {
-      // console.log(swiper)
-    })
+    /* eslint-disable no-unused-vars */
   },
 }
 </script>
@@ -66,14 +64,6 @@ export default {
     height: 55vh;
 
     .swiper-slide {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 18px;
-      font-size: 22px;
-      font-weight: bold;
-      color: #fff;
-
       a {
         width: 100%;
         height: 100%;

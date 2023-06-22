@@ -46,8 +46,6 @@ export default {
 
 <style lang="scss">
 .section-icons {
-  margin-top: 60px;
-
   .icons-wrapper {
     display: flex;
     justify-content: center;

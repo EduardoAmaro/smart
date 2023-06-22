@@ -24,7 +24,7 @@ h3 {
 }
 
 .section {
-  margin: 30px 0;
+  margin-top: 60px;
 }
 
 ul {
@@ -57,4 +57,8 @@ ul {
   &.thicker {
     border: 3px solid currentColor;
   }
+}
+
+.title {
+  font-family: $font-family-title;
 }
