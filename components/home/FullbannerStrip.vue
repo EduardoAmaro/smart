@@ -36,7 +36,6 @@
       .main-button {
         height: 32px;
         font-size: $font-size-xs;
-        font-weight: 700;
 
         &:hover {
           color: $dark-orange-color;
