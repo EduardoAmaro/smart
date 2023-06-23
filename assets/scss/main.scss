@@ -70,6 +70,10 @@ ul {
     border: 3px solid currentColor;
     font-weight: 700;
   }
+
+  &:hover {
+    color: $dark-orange-color;
+  }
 }
 
 .title {
