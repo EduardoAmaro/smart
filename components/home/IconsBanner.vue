@@ -51,7 +51,7 @@ export default {
     justify-content: center;
     align-items: center;
     gap: 10%;
-    background-color: $ligth-background;
+    background-color: $light-background;
     padding: 30px 0;
 
     .icon-container {

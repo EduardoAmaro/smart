@@ -23,7 +23,7 @@
 <style lang="scss">
 .swiper-slide {
   .product-block {
-    border: 2px solid $ligth-background;
+    border: 2px solid $light-background;
     padding: 10px;
 
     .images-wrapper {

@@ -15,7 +15,7 @@
 
 <style lang="scss">
 .section-strip {
-  background-color: $ligth-background;
+  background-color: $light-background;
   padding: 6px 0;
   font-family: $font-family-title;
 
