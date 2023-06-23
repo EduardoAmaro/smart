@@ -9,7 +9,7 @@
           </h2>
         </div>
         <div class="input-container">
-          <form class="form-newsletter" @submit="onSubmit">
+          <form class="form-newsletter">
             <div class="field">
               <label for="name">Nome</label>
               <input

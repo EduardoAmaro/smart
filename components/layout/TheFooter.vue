@@ -1,0 +1,152 @@
+<template>
+  <header class="section-footer">
+    <div class="container-fluid">
+      <div class="footer-wrapper">
+        <div class="logo-container">
+          <a href="/">
+            <img alt="logo" src="@/assets/images/smart-white-logo.png" />
+          </a>
+        </div>
+        <nav class="menu-desktop">
+          <ul class="menu">
+            <li class="item">
+              <a href="/empresa"> Empresa </a>
+            </li>
+            <li class="item">
+              <a href="/"> Produtos </a>
+            </li>
+            <li class="item">
+              <a href="/"> Apoio Técnico </a>
+            </li>
+            <li class="item">
+              <a href="/"> Fale Conosco </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="contact-container">
+          <span class="title">Contato</span>
+          <p>comercial@smartabrasivos.com.br</p>
+          <p>(54) 3013-3040</p>
+          <p>
+            R. Natal Chiarelo, 481 - Desvio Rizzo - Caxias do Sul - RS - Brasil,
+            95012-663
+          </p>
+          <SocialLogos />
+        </div>
+        <div class="text-container">
+          <h2 class="title">Baixe nosso catálogo</h2>
+          <button class="main-button thicker">Clique aqui</button>
+        </div>
+      </div>
+    </div>
+  </header>
+</template>
+
+<script>
+import SocialLogos from '~/components/layout/SocialLogos'
+
+export default {
+  components: {
+    SocialLogos,
+  },
+}
+</script>
+
+<style lang="scss">
+.section-footer {
+  background-color: $medium-background;
+  padding: 90px 0;
+  color: $white-color;
+
+  .footer-wrapper {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-container {
+      display: flex;
+    }
+
+    .menu-desktop {
+      display: flex;
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          color: $white-color;
+
+          a {
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: $font-size-ml;
+            height: 100%;
+            padding: 0 36px;
+            display: flex;
+            align-items: center;
+          }
+
+          &:hover {
+            color: $orange-color;
+          }
+        }
+      }
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 294px;
+
+      .title {
+        font-family: $font-family-title;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-size: $font-size-ml;
+        height: 100%;
+      }
+
+      p {
+        font-family: $font-family-title;
+        font-weight: 700;
+        $font-size-md: 1rem;
+      }
+
+      .social-logos {
+        a,
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .title {
+        font-size: $font-size-lm;
+        margin-bottom: 30px;
+      }
+
+      .main-button {
+        height: 42px;
+        padding: 0 30px;
+
+        &:hover {
+          color: $orange-color;
+        }
+      }
+    }
+  }
+}
+</style>
