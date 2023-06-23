@@ -21,6 +21,7 @@ export default {
 <style lang="scss">
 .section-mirrored {
   margin-top: 120px;
+  margin-bottom: 120px;
 
   .banners-container {
     display: flex;
