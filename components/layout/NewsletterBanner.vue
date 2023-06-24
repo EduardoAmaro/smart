@@ -13,6 +13,7 @@
             <div class="field">
               <label for="name">Nome</label>
               <input
+                id="name"
                 v-model="name"
                 name="name"
                 type="text"
@@ -23,6 +24,7 @@
             <div class="field">
               <label for="company">Empresa</label>
               <input
+                id="company"
                 v-model="company"
                 name="company"
                 type="text"
@@ -32,6 +34,7 @@
             <div class="field">
               <label for="email">E-mail</label>
               <input
+                id="email"
                 v-model="email"
                 name="email"
                 type="email"
