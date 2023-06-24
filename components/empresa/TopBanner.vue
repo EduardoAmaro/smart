@@ -1,17 +1,29 @@
 <template>
   <div class="section-topbanner">
     <div class="image-container">
-      <img alt="Sobre Nós" src="@/assets/images/topbanner.jpg" />
+      <img :alt="title" src="@/assets/images/topbanner.jpg" />
       <div class="text">
-        <h2 class="title">Sobre nós</h2>
-        <span class="subtitle">
-          Smart Abrasivos Industriais: soluções de alto desempenho para o seu
-          negócio.
-        </span>
+        <h2 class="title">{{ title }}</h2>
+        <span class="subtitle">{{ subtitle }}</span>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    subtitle: {
+      type: String,
+      required: true,
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .section-topbanner {
