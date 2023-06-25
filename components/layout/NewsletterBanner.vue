@@ -11,9 +11,9 @@
         <div class="input-container">
           <form class="form-newsletter">
             <div class="field">
-              <label for="name">Nome</label>
+              <label for="name-news">Nome</label>
               <input
-                id="name"
+                id="name-news"
                 v-model="name"
                 name="name"
                 type="text"
@@ -32,9 +32,9 @@
               />
             </div>
             <div class="field">
-              <label for="email">E-mail</label>
+              <label for="email-news">E-mail</label>
               <input
-                id="email"
+                id="email-news"
                 v-model="email"
                 name="email"
                 type="email"
