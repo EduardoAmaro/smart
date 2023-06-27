@@ -1,5 +1,5 @@
 <template>
-  <header class="section-footer">
+  <footer class="section-footer">
     <div class="container-fluid">
       <div class="footer-wrapper">
         <div class="logo-container">
@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-  </header>
+  </footer>
 </template>
 
 <script>
