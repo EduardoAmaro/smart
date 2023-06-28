@@ -51,10 +51,11 @@ export default {
 
     .logo-container {
       display: flex;
+      flex: 1;
     }
 
     .menu-desktop {
-      flex: 1;
+      flex: 4;
       display: flex;
       justify-content: center;
 
@@ -87,6 +88,8 @@ export default {
     .button-container {
       display: flex;
       align-items: center;
+      flex: 1;
+      justify-content: flex-end;
 
       button {
         color: $white-color;
