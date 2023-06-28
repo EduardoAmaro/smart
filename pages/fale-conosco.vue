@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TopBanner from '~/components/empresa/TopBanner'
+import TopBanner from '~/components/common/TopBanner'
 import FormContent from '~/components/fale-conosco/FormContent'
 import WhereToFindBanner from '~/components/fale-conosco/WhereToFindBanner'
 

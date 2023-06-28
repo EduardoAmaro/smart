@@ -16,6 +16,7 @@
 <style lang="scss">
 .section-fullbanner {
   margin-top: 120px;
+  margin-bottom: -60px;
 
   .image-container {
     height: 500px;

@@ -1,24 +1,24 @@
 <template>
   <main>
     <TopBanner
-      title="Sobre nós"
+      title="Apoio técnico"
       subtitle="Smart Abrasivos Industriais: soluções de alto desempenho para o seu negócio."
     />
-    <CompanyContent />
-    <FullbannerFooter />
+    <TencnicalContent />
+    <FormTecnical />
   </main>
 </template>
 
 <script>
 import TopBanner from '~/components/common/TopBanner'
-import CompanyContent from '~/components/empresa/CompanyContent'
-import FullbannerFooter from '~/components/empresa/FullbannerFooter'
+import TencnicalContent from '~/components/apoio-tecnico/TencnicalContent'
+import FormTecnical from '~/components/apoio-tecnico/FormTecnical'
 
 export default {
   components: {
     TopBanner,
-    CompanyContent,
-    FullbannerFooter,
+    TencnicalContent,
+    FormTecnical,
   },
 }
 </script>

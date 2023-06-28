@@ -136,8 +136,4 @@
     }
   }
 }
-
-.section-newsletter {
-  margin-top: 0;
-}
 </style>

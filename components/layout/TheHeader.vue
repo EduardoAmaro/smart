@@ -3,23 +3,23 @@
     <div class="container-fluid">
       <div class="header-wrapper">
         <div class="logo-container">
-          <a href="/">
+          <NuxtLink to="/">
             <SmartLogo />
-          </a>
+          </NuxtLink>
         </div>
         <nav class="menu-desktop">
           <ul class="menu">
             <li class="item">
-              <a href="/empresa"> Empresa </a>
+              <NuxtLink to="/empresa">Empresa</NuxtLink>
             </li>
             <li class="item">
-              <a href="/"> Produtos </a>
+              <NuxtLink to="/">Produtos</NuxtLink>
             </li>
             <li class="item">
-              <a href="/"> Apoio Técnico </a>
+              <NuxtLink to="/apoio-tecnico">Apoio Técnico</NuxtLink>
             </li>
             <li class="item">
-              <a href="/"> Fale Conosco </a>
+              <NuxtLink to="/fale-conosco">Fale Conosco</NuxtLink>
             </li>
           </ul>
         </nav>

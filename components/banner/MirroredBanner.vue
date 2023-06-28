@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-wrapper">
+  <div class="banner-mirrored">
     <div class="image-container">
       <img alt="imagem" src="@/assets/images/mirrored-banner.png" />
     </div>
@@ -19,7 +19,7 @@
 </template>
 
 <style lang="scss">
-.banner-wrapper {
+.banner-mirrored {
   display: flex;
 
   &:nth-child(2n) {
