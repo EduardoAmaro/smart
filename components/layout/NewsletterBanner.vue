@@ -66,7 +66,7 @@ export default {
 <style lang="scss">
 .section-newsletter {
   background-color: $light-background;
-  padding: 35px 0;
+  padding: 30px 0;
 
   .newsletter-wrapper {
     display: flex;

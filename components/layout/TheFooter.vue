@@ -55,14 +55,14 @@ export default {
 <style lang="scss">
 .section-footer {
   background-color: $medium-background;
-  padding: 90px 0;
+  padding: 40px 0;
   color: $white-color;
 
   .footer-wrapper {
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     .logo-container {
       display: flex;
