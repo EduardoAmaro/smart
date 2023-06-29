@@ -17,7 +17,7 @@
 <script>
 import { Swiper, Navigation } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
-import ProductBlock from '~/components/product/ProductBlock.vue'
+import ProductBlock from '~/components/common/ProductBlock.vue'
 
 export default {
   components: {

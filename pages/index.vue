@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import HomeSlider from '~/components/home/HomeSlider.vue'
-import FullbannerStrip from '~/components/home/FullbannerStrip.vue'
-import IconsBanner from '~/components/home/IconsBanner.vue'
-import ProductsSlider from '~/components/home/ProductsSlider.vue'
-import MirroredBanners from '~/components/home/MirroredBanners.vue'
-import BrandsSlider from '~/components/home/BrandsSlider.vue'
+import HomeSlider from '~/components/index/HomeSlider.vue'
+import FullbannerStrip from '~/components/index/FullbannerStrip.vue'
+import IconsBanner from '~/components/index/IconsBanner.vue'
+import ProductsSlider from '~/components/index/ProductsSlider.vue'
+import MirroredBanners from '~/components/index/MirroredBanners.vue'
+import BrandsSlider from '~/components/index/BrandsSlider.vue'
 
 export default {
   components: {
