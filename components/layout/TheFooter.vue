@@ -38,6 +38,9 @@
           <button class="main-button thicker">Clique aqui</button>
         </div>
       </div>
+      <div class="footer-bottom">
+        <p class="cnpj">© SMART ABRASIVOS LTDA – CNPJ 99.999.999/9999-99</p>
+      </div>
     </div>
   </footer>
 </template>
@@ -55,8 +58,22 @@ export default {
 <style lang="scss">
 .section-footer {
   background-color: $medium-background;
-  padding: 40px 0;
+  padding-top: 40px;
   color: $white-color;
+
+  .footer-bottom {
+    margin-top: 40px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .cnpj {
+      font-family: $font-family-title;
+      font-size: $font-size-xs;
+    }
+  }
 
   .footer-wrapper {
     padding: 10px 0;
