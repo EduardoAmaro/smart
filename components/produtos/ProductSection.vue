@@ -28,6 +28,7 @@ export default {
 
     .product-wrapper {
       display: flex;
+      align-items: flex-start;
     }
   }
 }
