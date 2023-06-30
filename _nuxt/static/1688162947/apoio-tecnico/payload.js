@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/apoio-tecnico", {data:[{}],fetch:{},mutations:void 0});
