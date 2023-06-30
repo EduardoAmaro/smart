@@ -34,10 +34,6 @@ export default {
     base: '/smart/',
   },
 
-  generate: {
-    routes: ['/product/1'],
-  },
-
   styleResources: {
     scss: ['~/assets/scss/variables.scss'],
   },
