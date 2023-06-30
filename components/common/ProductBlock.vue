@@ -1,7 +1,7 @@
 <template>
   <div class="swiper-slide">
     <div class="product-block">
-      <a href="/produtos/1">
+      <NuxtLink to="/produtos/1">
         <div class="images-wrapper">
           <img
             class="main-image"
@@ -22,7 +22,7 @@
             Disponível entre 30mm e 600mm de diâmetro.
           </p>
         </div>
-      </a>
+      </NuxtLink>
     </div>
   </div>
 </template>
