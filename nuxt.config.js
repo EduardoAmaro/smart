@@ -28,6 +28,10 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/scss/main'],
 
+  generate: {
+    routes: ['/product/1', '/product/2', '/product/3'],
+  },
+
   styleResources: {
     scss: ['~/assets/scss/variables.scss'],
   },
