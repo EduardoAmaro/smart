@@ -6,7 +6,9 @@
           <span>conheça nossas soluções. solicite nosso contato.</span>
         </div>
         <div class="button-container">
-          <button class="main-button thicker">Fale conosco</button>
+          <NuxtLink to="/fale-conosco"
+            ><button class="main-button thicker">Fale conosco</button></NuxtLink
+          >
         </div>
       </div>
     </div>

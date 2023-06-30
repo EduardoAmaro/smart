@@ -13,7 +13,7 @@
               <NuxtLink to="/empresa">Empresa</NuxtLink>
             </li>
             <li class="item">
-              <NuxtLink to="/">Produtos</NuxtLink>
+              <NuxtLink to="/discos-de-corte">Produtos</NuxtLink>
             </li>
             <li class="item">
               <NuxtLink to="/apoio-tecnico">Apoio Técnico</NuxtLink>
