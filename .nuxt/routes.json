@@ -1,0 +1,38 @@
+[
+  {
+    "name": "apoio-tecnico",
+    "path": "/apoio-tecnico",
+    "component": "/home/melhorenvio/www/eduardo/dev/smart/smart/pages/apoio-tecnico.vue",
+    "chunkName": "pages/apoio-tecnico"
+  },
+  {
+    "name": "empresa",
+    "path": "/empresa",
+    "component": "/home/melhorenvio/www/eduardo/dev/smart/smart/pages/empresa.vue",
+    "chunkName": "pages/empresa"
+  },
+  {
+    "name": "fale-conosco",
+    "path": "/fale-conosco",
+    "component": "/home/melhorenvio/www/eduardo/dev/smart/smart/pages/fale-conosco.vue",
+    "chunkName": "pages/fale-conosco"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/melhorenvio/www/eduardo/dev/smart/smart/pages/index.vue",
+    "chunkName": "pages/index"
+  },
+  {
+    "name": "produtos-slug",
+    "path": "/produtos/:slug?",
+    "component": "/home/melhorenvio/www/eduardo/dev/smart/smart/pages/produtos/_slug.vue",
+    "chunkName": "pages/produtos/_slug"
+  },
+  {
+    "name": "tag",
+    "path": "/:tag",
+    "component": "/home/melhorenvio/www/eduardo/dev/smart/smart/pages/_tag.vue",
+    "chunkName": "pages/_tag"
+  }
+]
