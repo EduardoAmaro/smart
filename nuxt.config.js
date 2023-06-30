@@ -30,6 +30,10 @@ export default {
 
   target: 'static',
 
+  router: {
+    base: '/smart/',
+  },
+
   generate: {
     routes: ['/product/1'],
   },
