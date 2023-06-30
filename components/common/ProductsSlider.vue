@@ -14,6 +14,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { Swiper, Navigation } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
