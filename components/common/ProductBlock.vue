@@ -1,7 +1,7 @@
 <template>
   <div class="swiper-slide">
     <div class="product-block">
-      <a href="#">
+      <a href="/produtos/1">
         <div class="images-wrapper">
           <img alt="imagem" src="@/assets/images/product-block.png" />
         </div>

@@ -23,6 +23,8 @@ export default {
 
 <style lang="scss">
 .product-section {
+  margin-bottom: 120px;
+
   .container-fluid {
     padding: 0 10%;
 

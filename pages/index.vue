@@ -3,7 +3,7 @@
     <HomeSlider />
     <FullbannerStrip />
     <IconsBanner />
-    <ProductsSlider />
+    <ProductsSlider title="Produtos em destaque" />
     <MirroredBanners />
     <BrandsSlider />
   </main>
@@ -13,7 +13,7 @@
 import HomeSlider from '~/components/index/HomeSlider.vue'
 import FullbannerStrip from '~/components/index/FullbannerStrip.vue'
 import IconsBanner from '~/components/index/IconsBanner.vue'
-import ProductsSlider from '~/components/index/ProductsSlider.vue'
+import ProductsSlider from '~/components/common/ProductsSlider.vue'
 import MirroredBanners from '~/components/index/MirroredBanners.vue'
 import BrandsSlider from '~/components/index/BrandsSlider.vue'
 

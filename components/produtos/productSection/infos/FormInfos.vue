@@ -63,7 +63,7 @@
             required
           />
         </div>
-        <div class="field">
+        <div class="field quantity-field">
           <label for="subject">Quantidade</label>
           <input
             id="quantity"
@@ -149,6 +149,12 @@ export default {
         &.message-field {
           width: 100%;
         }
+
+        &.quantity-field {
+          input {
+            text-align: center;
+          }
+        }
       }
 
       .main-button {
@@ -172,6 +178,10 @@ export default {
           &:hover {
             color: $dark-orange-color;
           }
+        }
+
+        svg {
+          margin-top: -2px;
         }
       }
     }

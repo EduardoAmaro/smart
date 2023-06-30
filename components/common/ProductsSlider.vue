@@ -2,7 +2,7 @@
   <div class="section section-products">
     <div class="container-fluid">
       <div class="swiper-title">
-        <h1 class="title">Produtos em destaque</h1>
+        <h1 class="title">{{ title }}</h1>
       </div>
       <div class="swiper swiper-products">
         <div class="swiper-wrapper">
@@ -22,6 +22,13 @@ import ProductBlock from '~/components/common/ProductBlock.vue'
 export default {
   components: {
     ProductBlock,
+  },
+
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
   },
 
   mounted() {
