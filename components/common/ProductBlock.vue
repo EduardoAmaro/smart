@@ -3,7 +3,16 @@
     <div class="product-block">
       <a href="/produtos/1">
         <div class="images-wrapper">
-          <img alt="imagem" src="@/assets/images/product-block.png" />
+          <img
+            class="main-image"
+            alt="imagem"
+            src="@/assets/images/product-block.png"
+          />
+          <img
+            class="secondary-image"
+            alt="imagem"
+            src="@/assets/images/product.jpg"
+          />
         </div>
         <div class="text-wrapper">
           <h3 class="title">Disco de Corte Alpha Line</h3>
@@ -27,8 +36,25 @@
     padding: 10px;
 
     .images-wrapper {
+      position: relative;
+      padding-bottom: 100%;
+
       img {
         width: 100%;
+        transition: opacity 0.3s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .secondary-image {
+        opacity: 0;
+      }
+
+      &:hover {
+        .secondary-image {
+          opacity: 1;
+        }
       }
     }
 

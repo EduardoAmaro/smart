@@ -64,7 +64,7 @@
           />
         </div>
         <div class="field quantity-field">
-          <label for="subject">Quantidade</label>
+          <label for="quantity">Quantidade</label>
           <input
             id="quantity"
             v-model="quantity"

@@ -39,7 +39,7 @@ export default {
       loop: false,
       slidesPerView: '5',
       spaceBetween: '25',
-      autoHeight: true,
+
       navigation: {
         nextEl: '.button-products-next',
         prevEl: '.button-products-prev',
