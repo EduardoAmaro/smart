@@ -26,5 +26,36 @@ export default {
     MirroredBanners,
     BrandsSlider,
   },
+
+  // use destructuring to get the $strapi instance from context object
+  async asyncData({ $strapi, store }) {
+    try {
+      // fetch data from strapi
+      const fullbannerBanners = await (
+        await fetch(`${store.state.apiUrl}/home-fullbanners?populate=*`)
+      ).json()
+      const brands = await (
+        await fetch(`${store.state.apiUrl}/home-brand-swippers?populate=*`)
+      ).json()
+      const iconBanners = await (
+        await fetch(`${store.state.apiUrl}/home-icons-banners?populate=*`)
+      ).json()
+      const mirroredBanners = await (
+        await fetch(`${store.state.apiUrl}/home-mirrored-banners?populate=*`)
+      ).json()
+
+      // make the fetched data available in the page
+      // also, return the .data property of the entities where
+      // the data we need is stored
+      return {
+        fullbannerBanners: fullbannerBanners.data,
+        brands: brands.data,
+        iconBanners: iconBanners.data,
+        mirroredBanners: mirroredBanners.data,
+      }
+    } catch (error) {
+      // console.log(error)
+    }
+  },
 }
 </script>
