@@ -2,31 +2,17 @@
   <div class="section section-icons">
     <div class="container-fluid">
       <div class="icons-wrapper">
-        <div class="icon-container">
+        <div v-for="banner in banners" :key="banner.id" class="icon-container">
           <div class="icon">
-            <BoxIcon />
+            <img
+              v-if="coverImageUrl(banner)"
+              :src="coverImageUrl(banner)"
+              :alt="coverImageAlt(banner)"
+            />
           </div>
           <div class="text">
-            <h2 class="title">Frete Grátis</h2>
-            <span class="subtitle">Frete grátis acima de R$ 299,00</span>
-          </div>
-        </div>
-        <div class="icon-container">
-          <div class="icon">
-            <BoxIcon />
-          </div>
-          <div class="text">
-            <h2 class="title">Frete Grátis</h2>
-            <span class="subtitle">Frete grátis acima de R$ 299,00</span>
-          </div>
-        </div>
-        <div class="icon-container">
-          <div class="icon">
-            <BoxIcon />
-          </div>
-          <div class="text">
-            <h2 class="title">Frete Grátis</h2>
-            <span class="subtitle">Frete grátis acima de R$ 299,00</span>
+            <h2 class="title">{{ banner.attributes.title.trim() }}</h2>
+            <span class="subtitle">{{ banner.attributes.subtitle }}</span>
           </div>
         </div>
       </div>
@@ -35,11 +21,25 @@
 </template>
 
 <script>
-import BoxIcon from '~/assets/svg/box.svg?inline'
-
 export default {
-  components: {
-    BoxIcon,
+  props: {
+    banners: {
+      type: Array,
+      required: true,
+    },
+  },
+
+  methods: {
+    coverImageUrl(banner) {
+      const url = this.$store.state.url
+      const imagePath = banner.attributes.image.data.attributes.url
+      return url + imagePath
+    },
+
+    coverImageAlt(banner) {
+      const alt = banner.attributes.image.data.attributes.alternativeText
+      return alt || 'Icon Banner'
+    },
   },
 }
 </script>

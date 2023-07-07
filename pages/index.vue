@@ -2,7 +2,7 @@
   <main>
     <HomeSlider :banners="fullbannerBanners" />
     <FullbannerStrip />
-    <IconsBanner />
+    <IconsBanner :banners="iconBanners" />
     <ProductsSlider title="Produtos em destaque" />
     <MirroredBanners />
     <BrandsSlider />
