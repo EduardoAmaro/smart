@@ -1,6 +1,6 @@
 <template>
   <main>
-    <HomeSlider />
+    <HomeSlider :banners="fullbannerBanners" />
     <FullbannerStrip />
     <IconsBanner />
     <ProductsSlider title="Produtos em destaque" />

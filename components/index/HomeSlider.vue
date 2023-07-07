@@ -2,19 +2,13 @@
   <div class="section-swiper">
     <div class="swiper swiper-fullbanner">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div v-for="banner in banners" :key="banner.id" class="swiper-slide">
           <a href="#">
-            <img alt="imagem" src="@/assets/images/fullbanner.jpg" />
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="#">
-            <img alt="imagem" src="@/assets/images/fullbanner.jpg" />
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="#">
-            <img alt="imagem" src="@/assets/images/fullbanner.jpg" />
+            <img
+              v-if="coverImageUrl(banner)"
+              :src="coverImageUrl(banner)"
+              alt=""
+            />
           </a>
         </div>
       </div>
@@ -29,6 +23,13 @@ import { Swiper, Navigation, Pagination, Autoplay } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
+  props: {
+    banners: {
+      type: Array,
+      required: true,
+    },
+  },
+
   mounted() {
     /* eslint-disable no-unused-vars */
     const swiper = new Swiper('.swiper-fullbanner', {
@@ -43,14 +44,17 @@ export default {
         nextEl: '.button-fullbanner-next',
         prevEl: '.button-fullbanner-prev',
       },
-
-      /* pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true,
-      }, */
     })
     /* eslint-disable no-unused-vars */
+  },
+
+  methods: {
+    coverImageUrl(banner) {
+      const url = this.$store.state.url
+      const imagePath =
+        banner.attributes.image.data.attributes.formats.large.url
+      return url + imagePath
+    },
   },
 }
 </script>
