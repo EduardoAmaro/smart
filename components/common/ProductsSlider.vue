@@ -2,11 +2,15 @@
   <div class="section section-products">
     <div class="container-fluid">
       <div class="swiper-title">
-        <h1 class="title">{{ title }}</h1>
+        <h1 class="title">{{ tag.title }}</h1>
       </div>
       <div class="swiper swiper-products">
         <div class="swiper-wrapper">
-          <ProductBlock v-for="index in 10" :key="index"></ProductBlock>
+          <ProductBlock
+            v-for="product in products"
+            :key="product.id"
+            :product="product.attributes"
+          />
         </div>
       </div>
       <div class="button-products-prev swiper-button-prev"></div>
@@ -26,8 +30,12 @@ export default {
   },
 
   props: {
-    title: {
-      type: String,
+    tag: {
+      type: Object,
+      required: true,
+    },
+    products: {
+      type: Array,
       required: true,
     },
   },
@@ -39,7 +47,6 @@ export default {
       loop: false,
       slidesPerView: '5',
       spaceBetween: '25',
-
       navigation: {
         nextEl: '.button-products-next',
         prevEl: '.button-products-prev',

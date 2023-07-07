@@ -15,11 +15,12 @@
           />
         </div>
         <div class="text-wrapper">
-          <h3 class="title">Disco de Corte Alpha Line</h3>
-          <h4 class="subtitle">Rhodius</h4>
+          <h3 class="title">{{ product.name }}</h3>
+          <h4 class="subtitle" :style="'color: ' + product.color">
+            {{ product.brand }}
+          </h4>
           <p class="description">
-            Discos de corte de menor custo. Para máquinas de baixa potência.
-            Disponível entre 30mm e 600mm de diâmetro.
+            {{ product.description }}
           </p>
         </div>
       </NuxtLink>
@@ -27,7 +28,16 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  props: {
+    product: {
+      type: Object,
+      required: true,
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .swiper-slide {

@@ -1,7 +1,7 @@
 <template>
   <main>
     <ProductSection />
-    <ProductsSlider title="Produtos relacionados" />
+    <ProductsSlider title="Produtos relacionados" :tag="tag" />
   </main>
 </template>
 
@@ -13,6 +13,14 @@ export default {
   components: {
     ProductSection,
     ProductsSlider,
+  },
+
+  data() {
+    return {
+      tag: {
+        name: 'discos-de-corte',
+      },
+    }
   },
 }
 </script>

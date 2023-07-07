@@ -2,7 +2,7 @@
   <div class="section products-list">
     <div class="container-fluid">
       <div class="list-wrapper">
-        <ProductBlock v-for="index in 12" :key="index" />
+        <ProductBlock v-for="index in 12" :key="index" :product="product" />
       </div>
     </div>
     <div class="text-container">
@@ -29,6 +29,16 @@ export default {
       type: String,
       required: true,
     },
+  },
+
+  data() {
+    return {
+      product: {
+        name: 'test',
+        brand: 'test',
+        description: 'test',
+      },
+    }
   },
 }
 </script>
