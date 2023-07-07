@@ -2,20 +2,26 @@
   <div class="section section-mirrored">
     <div class="container-fluid">
       <div class="banners-container">
-        <div v-for="index in 3" :key="index" class="banner-mirrored">
+        <div v-for="banner in banners" :key="banner.id" class="banner-mirrored">
           <div class="image-container">
-            <img alt="imagem" src="@/assets/images/mirrored-banner.png" />
+            <img
+              v-if="coverImageUrl(banner)"
+              :src="coverImageUrl(banner)"
+              :alt="coverImageAlt(banner)"
+            />
           </div>
           <div class="text-container">
-            <h4 class="uppertitle">Título superior</h4>
-            <h3 class="title">Título da seção</h3>
+            <h4 class="uppertitle">{{ banner.attributes.uppertitle }}</h4>
+            <h3 class="title">{{ banner.attributes.title }}</h3>
             <p class="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a
-              dapibus felis, eu vulputate lectus. Integer pellentesque malesuada
-              tellus, id hendrerit tortor pulvinar eu.
+              {{ banner.attributes.description }}
             </p>
             <div class="button-container">
-              <button class="main-button thicker">Call to action</button>
+              <a :href="banner.attributes.buttonLink" target="_blank">
+                <button class="main-button thicker">
+                  {{ banner.attributes.buttonText }}
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -24,7 +30,29 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  props: {
+    banners: {
+      type: Array,
+      required: true,
+    },
+  },
+
+  methods: {
+    coverImageUrl(banner) {
+      const url = this.$store.state.url
+      const imagePath = banner.attributes.image.data.attributes.url
+      return url + imagePath
+    },
+
+    coverImageAlt(banner) {
+      const alt = banner.attributes.image.data.attributes.alternativeText
+      return alt || 'Mirrored Banner'
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .section-mirrored {

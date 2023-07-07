@@ -51,8 +51,7 @@ export default {
   methods: {
     coverImageUrl(banner) {
       const url = this.$store.state.url
-      const imagePath =
-        banner.attributes.image.data.attributes.formats.large.url
+      const imagePath = banner.attributes.image.data.attributes.url
       return url + imagePath
     },
 

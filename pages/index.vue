@@ -4,7 +4,7 @@
     <FullbannerStrip />
     <IconsBanner :banners="iconBanners" />
     <ProductsSlider title="Produtos em destaque" />
-    <MirroredBanners />
+    <MirroredBanners :banners="mirroredBanners" />
     <BrandsSlider />
   </main>
 </template>
