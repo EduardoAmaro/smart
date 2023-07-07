@@ -2,12 +2,16 @@
   <div class="section products-list">
     <div class="container-fluid">
       <div class="list-wrapper">
-        <ProductBlock v-for="index in 12" :key="index" :product="product" />
+        <ProductBlock
+          v-for="product in products"
+          :key="product.id"
+          :product="product.attributes"
+        />
       </div>
     </div>
     <div class="text-container">
-      <h3 class="title">{{ title }}</h3>
-      <p class="description">{{ description }}</p>
+      <h3 class="title">{{ tag.title }}</h3>
+      <p class="description">{{ tag.description }}</p>
     </div>
   </div>
 </template>
@@ -21,24 +25,14 @@ export default {
   },
 
   props: {
-    title: {
-      type: String,
+    tag: {
+      type: Object,
       required: true,
     },
-    description: {
-      type: String,
+    products: {
+      type: Array,
       required: true,
     },
-  },
-
-  data() {
-    return {
-      product: {
-        name: 'test',
-        brand: 'test',
-        description: 'test',
-      },
-    }
   },
 }
 </script>

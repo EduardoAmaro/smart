@@ -4,26 +4,28 @@
       <NuxtLink to="/produtos/1">
         <div class="images-wrapper">
           <img
-            class="main-image"
-            alt="imagem"
-            src="@/assets/images/product-block.png"
+            v-for="(image, index) in images"
+            :key="image.id"
+            :class="{
+              'main-image': index === 0,
+              'secondary-image': index === 1,
+            }"
+            :src="coverImageUrl(image)"
+            :alt="coverImageAlt(image)"
           />
-          <img
-            class="secondary-image"
-            alt="imagem"
-            src="@/assets/images/product.jpg"
-          />
-        </div>
-        <div class="text-wrapper">
-          <h3 class="title">{{ product.name }}</h3>
-          <h4 class="subtitle" :style="'color: ' + product.color">
-            {{ product.brand }}
-          </h4>
-          <p class="description">
-            {{ product.description }}
-          </p>
         </div>
       </NuxtLink>
+      <div class="text-wrapper">
+        <NuxtLink to="/produtos/1">
+          <h3 class="title">{{ product.name }}</h3>
+        </NuxtLink>
+        <h4 class="subtitle" :style="'color: ' + product.color">
+          {{ product.brand }}
+        </h4>
+        <p class="description">
+          {{ product.description }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -36,14 +38,39 @@ export default {
       required: true,
     },
   },
+
+  computed: {
+    images() {
+      const images = this.product.images.data.slice(0, 2)
+      return images
+    },
+  },
+
+  methods: {
+    coverImageUrl(image) {
+      const url = this.$store.state.url
+      const imagePath = image.attributes.url
+      return url + imagePath
+    },
+
+    coverImageAlt(image) {
+      const alt = image.attributes.alternativeText
+      return alt || 'Product Image'
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .swiper-slide {
+  height: auto !important;
+
   .product-block {
+    height: 100%;
     border: 2px solid $light-background;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 
     .images-wrapper {
       position: relative;
@@ -76,6 +103,11 @@ export default {
         font-size: $font-size-ml;
         font-weight: 600;
         margin-bottom: 5px;
+        transition: 0.3s;
+
+        &:hover {
+          color: $dark-orange-color;
+        }
       }
 
       .subtitle {

@@ -1,10 +1,7 @@
 <template>
   <main>
-    <TagBanner title="Discos de corte" />
-    <ProductsList
-      title="Discos de corte"
-      description="A Smart apresenta ao mercado a linha de rebolos da SRT Abrasivos. Uma linha competitiva com ótimos índices de qualidade e custo-benefício ideal para a indústria. Trabalhamos com uma proposta de soluções, fazendo uma análise junto ao cliente das suas reais necessidades, desenvolvendo o melhor produto afim de conseguir ganhos nos processos de afiação, retificação e rebarbação."
-    />
+    <TagBanner :tag="tags[0].attributes" />
+    <ProductsList :products="taggedProducts" :tag="tags[0].attributes" />
   </main>
 </template>
 
@@ -16,6 +13,31 @@ export default {
   components: {
     TagBanner,
     ProductsList,
+  },
+
+  async asyncData({ params, store }) {
+    try {
+      const tags = await (
+        await fetch(
+          `${store.state.apiUrl}/tags?filters[name][$eq]=${params.tag}&populate=*`
+        )
+      ).json()
+
+      /* eslint-disable no-useless-escape */
+      const taggedProducts = await (
+        await fetch(
+          `${store.state.apiUrl}/produtos?filters\[tags\][name][$eq]=${params.tag}&populate=*`
+        )
+      ).json()
+      /* eslint-disable no-useless-escape */
+
+      return {
+        tags: tags.data,
+        taggedProducts: taggedProducts.data,
+      }
+    } catch (error) {
+      // console.log(error)
+    }
   },
 }
 </script>

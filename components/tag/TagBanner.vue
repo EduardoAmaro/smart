@@ -2,10 +2,10 @@
   <div class="section-tagbanner">
     <div class="container-fluid">
       <div class="text-container">
-        <h2 class="title">{{ title }}</h2>
+        <h2 class="title">{{ tag.title }}</h2>
       </div>
       <div class="image-container">
-        <img :alt="title" src="@/assets/images/rhodius.png" />
+        <img alt="" src="@/assets/images/rhodius.png" />
       </div>
     </div>
   </div>
@@ -14,8 +14,8 @@
 <script>
 export default {
   props: {
-    title: {
-      type: String,
+    tag: {
+      type: Object,
       required: true,
     },
   },
