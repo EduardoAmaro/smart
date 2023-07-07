@@ -7,7 +7,7 @@
             <img
               v-if="coverImageUrl(banner)"
               :src="coverImageUrl(banner)"
-              alt=""
+              :alt="coverImageAlt(banner)"
             />
           </a>
         </div>
@@ -54,6 +54,11 @@ export default {
       const imagePath =
         banner.attributes.image.data.attributes.formats.large.url
       return url + imagePath
+    },
+
+    coverImageAlt(banner) {
+      const alt = banner.attributes.image.data.attributes.alternativeText
+      return alt || 'Fullbanner Image'
     },
   },
 }
