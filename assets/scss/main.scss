@@ -8,6 +8,10 @@ body {
   font-family: $font-family-text;
   color: $text-color;
   margin: 0;
+
+  main {
+    min-height: 60vh;
+  }
 }
 
 a {
