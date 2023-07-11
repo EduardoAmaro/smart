@@ -43,7 +43,7 @@ export default {
         taggedProducts: taggedProducts.data,
       }
     } catch (error) {
-      // console.log(error)
+      console.log(error)
     }
   },
 }
