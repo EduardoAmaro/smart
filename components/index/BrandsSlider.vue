@@ -4,11 +4,13 @@
       <div class="swiper swiper-brands">
         <div class="swiper-wrapper">
           <div v-for="brand in brands" :key="brand.id" class="swiper-slide">
-            <img
-              v-if="coverImageUrl(brand)"
-              :src="coverImageUrl(brand)"
-              :alt="coverImageAlt(brand)"
-            />
+            <a :href="brand.attributes.link" target="_blank">
+              <img
+                v-if="coverImageUrl(brand)"
+                :src="coverImageUrl(brand)"
+                :alt="coverImageAlt(brand)"
+              />
+            </a>
           </div>
         </div>
       </div>
