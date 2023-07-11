@@ -4,6 +4,7 @@ export const state = () => ({
   url: process.env.STRAPI_URL || 'http://localhost:1338/',
   contactData: null,
   socialData: null,
+  footerMenusData: null,
 })
 
 export const mutations = {
@@ -12,5 +13,8 @@ export const mutations = {
   },
   setSocialData(state, data) {
     state.socialData = data
+  },
+  setFooterMenusData(state, data) {
+    state.footerMenusData = data
   },
 }

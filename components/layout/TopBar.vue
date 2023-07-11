@@ -10,10 +10,7 @@
           />
         </div>
         <div class="social-email">
-          <a
-            class="email"
-            :href="`mailto:${contact.email}?subject=Assunto do email&cc=${contact.email}&body=Conteúdo do email que será preenchido automaticamente`"
-          >
+          <a class="email" :href="`mailto:${contact.email}`">
             <span>{{ contact.email }}</span>
           </a>
         </div>

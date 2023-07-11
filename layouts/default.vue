@@ -4,7 +4,11 @@
     <TheHeader />
     <Nuxt />
     <NewsletterBanner />
-    <TheFooter />
+    <TheFooter
+      :contact="contactData"
+      :socials="socialData"
+      :menus="footerMenusData"
+    />
   </div>
 </template>
 
@@ -28,11 +32,17 @@ export default {
       .then((response) => {
         this.$store.commit('setContactData', response.data)
 
-        // Fetch social data after contact data is fetched
         return this.$axios.get(`${this.$store.state.apiUrl}/socials?populate=*`)
       })
       .then((response) => {
         this.$store.commit('setSocialData', response.data)
+
+        return this.$axios.get(
+          `${this.$store.state.apiUrl}/footer-menus?populate=*`
+        )
+      })
+      .then((response) => {
+        this.$store.commit('setFooterMenusData', response.data)
       })
       .catch((error) => {
         console.error('Failed to fetch data:', error)
@@ -45,6 +55,9 @@ export default {
     },
     socialData() {
       return this.$store.state.socialData.data
+    },
+    footerMenusData() {
+      return this.$store.state.footerMenusData.data
     },
   },
 }

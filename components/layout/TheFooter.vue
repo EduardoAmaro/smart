@@ -9,31 +9,25 @@
         </div>
         <nav class="menu-desktop">
           <ul class="menu">
-            <li class="item">
-              <NuxtLink to="/empresa">Empresa</NuxtLink>
-            </li>
-            <li class="item">
-              <NuxtLink to="/discos-de-corte">Produtos</NuxtLink>
-            </li>
-            <li class="item">
-              <NuxtLink to="/apoio-tecnico">Apoio Técnico</NuxtLink>
-            </li>
-            <li class="item">
-              <NuxtLink to="/fale-conosco">Fale Conosco</NuxtLink>
+            <li v-for="menu in menus" :key="menu.id" class="item">
+              <NuxtLink :to="menu.attributes.link">
+                {{ menu.attributes.text }}
+              </NuxtLink>
             </li>
           </ul>
         </nav>
         <div class="contact-container">
           <span class="title">Contato</span>
-          <p>comercial@smartabrasivos.com.br</p>
-          <p>(54) 3013-3040</p>
-          <p>
-            R. Natal Chiarelo, 481 - Desvio Rizzo - Caxias do Sul - RS - Brasil,
-            95012-663
-          </p>
+          <a class="email" :href="`mailto:${contact.email}`">
+            <p>{{ contact.email }}</p>
+          </a>
+          <a class="fone" :href="`tel:${contact.phone}`">
+            <p>{{ contact.phone }}</p>
+          </a>
+          <p>{{ contact.address }}</p>
           <div class="social-logos">
             <SocialLogos
-              v-for="social in socialData"
+              v-for="social in socials"
               :key="social.id"
               :social="social.attributes"
             />
@@ -45,7 +39,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="cnpj">© SMART ABRASIVOS LTDA – CNPJ 99.999.999/9999-99</p>
+        <p class="cnpj">{{ contact.copyright }} – CNPJ {{ contact.cnpj }}</p>
       </div>
     </div>
   </footer>
@@ -59,9 +53,18 @@ export default {
     SocialLogos,
   },
 
-  computed: {
-    socialData() {
-      return this.$store.state.socialData.data
+  props: {
+    contact: {
+      type: Object,
+      required: true,
+    },
+    socials: {
+      type: Array,
+      required: true,
+    },
+    menus: {
+      type: Array,
+      required: true,
     },
   },
 }
