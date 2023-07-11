@@ -31,7 +31,13 @@
             R. Natal Chiarelo, 481 - Desvio Rizzo - Caxias do Sul - RS - Brasil,
             95012-663
           </p>
-          <SocialLogos />
+          <div class="social-logos">
+            <SocialLogos
+              v-for="social in socialData"
+              :key="social.id"
+              :social="social.attributes"
+            />
+          </div>
         </div>
         <div class="text-container">
           <h2 class="title">Baixe nosso catálogo</h2>
@@ -46,11 +52,17 @@
 </template>
 
 <script>
-import SocialLogos from '~/components/layout/SocialLogos'
+import SocialLogos from '~/components/common/SocialLogos'
 
 export default {
   components: {
     SocialLogos,
+  },
+
+  computed: {
+    socialData() {
+      return this.$store.state.socialData.data
+    },
   },
 }
 </script>

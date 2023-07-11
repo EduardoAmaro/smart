@@ -1,18 +1,7 @@
 <template>
-  <div class="social-logos">
-    <a href="https://www.instagram.com/smartabrasivos/" target="_blank">
-      <FacebookLogo />
-    </a>
-    <a href="https://www.instagram.com/smartabrasivos/" target="_blank">
-      <InstagramLogo />
-    </a>
-    <a href="https://www.linkedin.com/company/smart-abrasivos/" target="_blank">
-      <LinkedinLogo />
-    </a>
-    <a href="https://www.linkedin.com/company/smart-abrasivos/" target="_blank">
-      <YoutubeLogo />
-    </a>
-  </div>
+  <a :href="social.link" target="_blank">
+    <component :is="socialComponent" />
+  </a>
 </template>
 
 <script>
@@ -22,11 +11,20 @@ import LinkedinLogo from '~/assets/svg/linkedin.svg?inline'
 import YoutubeLogo from '~/assets/svg/youtube.svg?inline'
 
 export default {
-  components: {
-    FacebookLogo,
-    InstagramLogo,
-    LinkedinLogo,
-    YoutubeLogo,
+  props: {
+    social: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  computed: {
+    socialComponent() {
+      if (this.social.name === 'facebook') return FacebookLogo
+      if (this.social.name === 'instagram') return InstagramLogo
+      if (this.social.name === 'linkedin') return LinkedinLogo
+      return YoutubeLogo
+    },
   },
 }
 </script>

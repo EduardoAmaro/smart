@@ -2,18 +2,24 @@
   <div class="section-topbar">
     <div class="container-fluid">
       <div class="topbar-wrapper">
-        <SocialLogos />
+        <div class="social-logos">
+          <SocialLogos
+            v-for="social in socials"
+            :key="social.id"
+            :social="social.attributes"
+          />
+        </div>
         <div class="social-email">
           <a
             class="email"
-            href="mailto:comercial@smartabrasivos.com.br?subject=Assunto do email&cc=comercial@smartabrasivos.com.br&body=Conteúdo do email que será preenchido automaticamente"
+            :href="`mailto:${contact.email}?subject=Assunto do email&cc=${contact.email}&body=Conteúdo do email que será preenchido automaticamente`"
           >
-            <span>comercial@smartabrasivos.com.br</span>
+            <span>{{ contact.email }}</span>
           </a>
         </div>
         <div class="social-fone">
-          <a class="fone" href="tel:5430133040">
-            <span>(54) 3013-3040</span>
+          <a class="fone" :href="`tel:${contact.phone}`">
+            <span>{{ contact.phone }}</span>
           </a>
         </div>
       </div>
@@ -22,11 +28,22 @@
 </template>
 
 <script>
-import SocialLogos from '~/components/layout/SocialLogos'
+import SocialLogos from '~/components/common/SocialLogos'
 
 export default {
   components: {
     SocialLogos,
+  },
+
+  props: {
+    contact: {
+      type: Object,
+      required: true,
+    },
+    socials: {
+      type: Array,
+      required: true,
+    },
   },
 }
 </script>
