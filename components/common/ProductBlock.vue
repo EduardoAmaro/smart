@@ -1,7 +1,12 @@
 <template>
   <div class="swiper-slide">
     <div class="product-block">
-      <NuxtLink to="/produtos/1">
+      <NuxtLink
+        :to="{
+          path: 'produtos/' + product.slug,
+          params: { slug: 'product.slug' },
+        }"
+      >
         <div class="images-wrapper">
           <img
             v-for="(image, index) in images"
@@ -16,7 +21,12 @@
         </div>
       </NuxtLink>
       <div class="text-wrapper">
-        <NuxtLink to="/produtos/1">
+        <NuxtLink
+          :to="{
+            path: 'produtos/' + product.slug,
+            params: { slug: 'product.slug' },
+          }"
+        >
           <h3 class="title">{{ product.name }}</h3>
         </NuxtLink>
         <h4 class="subtitle" :style="'color: ' + product.color">

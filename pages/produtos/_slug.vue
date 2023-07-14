@@ -1,25 +1,32 @@
 <template>
   <main>
-    <ProductSection />
-    <ProductsSlider title="Produtos relacionados" :tag="tag" />
+    <ProductSection :product="product[0].attributes" />
+    <!-- <ProductsSlider title="Produtos relacionados" :tag="tag" /> -->
   </main>
 </template>
 
 <script>
 import ProductSection from '~/components/produtos/ProductSection'
-import ProductsSlider from '~/components/common/ProductsSlider'
+/* import ProductsSlider from '~/components/common/ProductsSlider' */
 
 export default {
   components: {
     ProductSection,
-    ProductsSlider,
+    /* ProductsSlider, */
   },
 
-  data() {
-    return {
-      tag: {
-        name: 'discos-de-corte',
-      },
+  async asyncData({ params, store }) {
+    try {
+      const product = await (
+        await fetch(
+          `${store.state.apiUrl}/produtos?filters[slug][$eq]=${params.slug}&populate=*`
+        )
+      ).json()
+      return {
+        product: product.data,
+      }
+    } catch (error) {
+      console.log(error)
     }
   },
 }

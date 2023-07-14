@@ -1,17 +1,25 @@
 <template>
   <div class="text-wrapper">
-    <h3 class="uppertitle">Rhodius</h3>
-    <h1 class="title">DISCO DE CORTE 180 MM X 2,5 MM X 22,23 MM Alpha line</h1>
+    <h3 class="uppertitle" :style="'color: ' + product.color">
+      {{ product.brand }}
+    </h3>
+    <h1 class="title">{{ product.name }}</h1>
     <p class="description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a dapibus
-      felis, eu vulputate lectus. Integer pellentesque malesuada tellus, id
-      hendrerit tortor pulvinar eu.
+      {{ product.description }}
     </p>
-    <p class="description">Discos de corte de menor custo.</p>
-    <p class="description">Para máquinas de baixa potência.</p>
-    <p class="description">Disponível entre 30mm e 600mm de diâmetro.</p>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    product: {
+      type: Object,
+      required: true,
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .infos-wrapper {

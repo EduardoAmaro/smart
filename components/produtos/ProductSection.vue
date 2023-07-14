@@ -2,8 +2,8 @@
   <div class="section product-section">
     <div class="container-fluid">
       <div class="product-wrapper">
-        <ImagesSliders />
-        <InfosSection />
+        <ImagesSliders :images="product.images.data" />
+        <InfosSection :product="product" />
       </div>
     </div>
   </div>
@@ -17,6 +17,13 @@ export default {
   components: {
     ImagesSliders,
     InfosSection,
+  },
+
+  props: {
+    product: {
+      type: Object,
+      required: true,
+    },
   },
 }
 </script>

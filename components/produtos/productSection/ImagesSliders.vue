@@ -3,9 +3,13 @@
     <div class="wrapper-thumbs">
       <div class="swiper swiper-thumbs">
         <div class="swiper-wrapper">
-          <div v-for="index in 5" :key="index" class="swiper-slide image-thumb">
+          <div
+            v-for="image in images"
+            :key="image.id"
+            class="swiper-slide image-thumb"
+          >
             <div class="image-wrapper">
-              <img alt="imagem" src="@/assets/images/product.jpg" />
+              <img :src="coverImageUrl(image)" :alt="coverImageAlt(image)" />
             </div>
           </div>
         </div>
@@ -14,9 +18,9 @@
     <div class="wrapper-slider">
       <div class="swiper swiper-images">
         <div class="swiper-wrapper">
-          <div v-for="index in 5" :key="index" class="swiper-slide">
+          <div v-for="image in images" :key="image.id" class="swiper-slide">
             <div class="image-wrapper">
-              <img alt="imagem" src="@/assets/images/product.jpg" />
+              <img :src="coverImageUrl(image)" :alt="coverImageAlt(image)" />
             </div>
           </div>
         </div>
@@ -31,12 +35,20 @@ import { Swiper, Navigation } from 'swiper'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
+  props: {
+    images: {
+      type: Array,
+      required: true,
+    },
+  },
+
   mounted() {
     /* eslint-disable no-unused-vars */
     const swiperImages = new Swiper('.swiper-images', {
       modules: [Navigation],
       loop: false,
       slidesPerView: '1',
+      autoHeight: true,
       navigation: {
         nextEl: '.button-images-next',
         prevEl: '.button-images-prev',
@@ -49,9 +61,21 @@ export default {
       watchOverflow: true,
       direction: 'vertical',
       spaceBetween: '10',
-      centerInsufficientSlides: true,
     })
     /* eslint-disable no-unused-vars */
+  },
+
+  methods: {
+    coverImageUrl(image) {
+      const url = this.$store.state.url
+      const imagePath = image.attributes.url
+      return url + imagePath
+    },
+
+    coverImageAlt(image) {
+      const alt = image.attributes.alternativeText
+      return alt || 'Product Image'
+    },
   },
 }
 </script>

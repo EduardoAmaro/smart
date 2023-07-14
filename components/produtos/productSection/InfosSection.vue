@@ -1,6 +1,6 @@
 <template>
   <div class="infos-wrapper">
-    <TextInfos />
+    <TextInfos :product="product" />
     <FormInfos />
   </div>
 </template>
@@ -13,6 +13,13 @@ export default {
   components: {
     TextInfos,
     FormInfos,
+  },
+
+  props: {
+    product: {
+      type: Object,
+      required: true,
+    },
   },
 }
 </script>
