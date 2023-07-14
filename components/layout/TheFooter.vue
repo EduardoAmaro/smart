@@ -137,6 +137,12 @@ export default {
       gap: 20px;
       max-width: 294px;
 
+      a {
+        &:hover {
+          color: $orange-color;
+        }
+      }
+
       .title {
         font-family: $font-family-title;
         text-transform: uppercase;
