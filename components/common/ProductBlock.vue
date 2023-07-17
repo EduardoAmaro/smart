@@ -3,7 +3,7 @@
     <div class="product-block">
       <NuxtLink
         :to="{
-          path: 'produtos/' + product.slug,
+          path: '/produtos/' + product.slug,
           params: { slug: 'product.slug' },
         }"
       >

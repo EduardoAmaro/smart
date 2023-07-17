@@ -41,18 +41,33 @@ export default {
   },
 
   mounted() {
-    /* eslint-disable no-unused-vars */
-    const swiperProducts = new Swiper('.swiper-products', {
-      modules: [Navigation],
-      loop: false,
-      slidesPerView: '5',
-      spaceBetween: '25',
-      navigation: {
-        nextEl: '.button-products-next',
-        prevEl: '.button-products-prev',
-      },
+    document.querySelectorAll('.swiper-products').forEach((swiper, index) => {
+      swiper.classList.add('i-' + index)
+
+      console.log(
+        swiper.parentElement.getElementsByClassName('button-products-prev')
+      )
+
+      swiper.parentElement
+        .getElementsByClassName('swiper-button-prev')[0]
+        .classList.add('btn-prev-' + index)
+      swiper.parentElement
+        .getElementsByClassName('swiper-button-next')[0]
+        .classList.add('btn-next-' + index)
+
+      /* eslint-disable no-unused-vars */
+      const swiperProducts = new Swiper(swiper, {
+        modules: [Navigation],
+        loop: false,
+        slidesPerView: '5',
+        spaceBetween: '25',
+        navigation: {
+          nextEl: '.btn-next-' + index,
+          prevEl: '.btn-prev-' + index,
+        },
+      })
+      /* eslint-disable no-unused-vars */
     })
-    /* eslint-disable no-unused-vars */
   },
 }
 </script>
