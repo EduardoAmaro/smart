@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main v-if="product">
     <ProductSection :product="product" />
     <ProductsSlider
       v-for="tag in relatedTags"
@@ -7,6 +7,9 @@
       :tag="tag.attributes"
       :products="relatedProducts(tag.attributes.name)"
     />
+  </main>
+  <main v-else class="section container-fluid">
+    <h1 class="title">Produto não encontrado</h1>
   </main>
 </template>
 

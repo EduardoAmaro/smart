@@ -1,14 +1,10 @@
 <template>
-  <main>
-    <TagBanner v-if="tags[0]" :tag="tags[0].attributes" />
-    <ProductsList
-      v-if="tags[0]"
-      :products="taggedProducts"
-      :tag="tags[0].attributes"
-    />
-    <div v-else>
-      <h1 class="title">Página não encontrada</h1>
-    </div>
+  <main v-if="tags[0]">
+    <TagBanner :tag="tags[0].attributes" />
+    <ProductsList :products="taggedProducts" :tag="tags[0].attributes" />
+  </main>
+  <main v-else class="section container-fluid">
+    <h1 class="title">Página não encontrada</h1>
   </main>
 </template>
 
