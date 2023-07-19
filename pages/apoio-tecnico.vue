@@ -1,9 +1,6 @@
 <template>
   <main>
-    <TopBanner
-      title="Apoio técnico"
-      subtitle="Smart Abrasivos Industriais: soluções de alto desempenho para o seu negócio."
-    />
+    <TopBanner :banner="banner" />
     <TencnicalContent />
     <FormTecnical />
   </main>
@@ -19,6 +16,22 @@ export default {
     TopBanner,
     TencnicalContent,
     FormTecnical,
+  },
+
+  async asyncData({ store }) {
+    try {
+      const banners = await (
+        await fetch(
+          `${store.state.apiUrl}/apoio-tecnico-top-banners?&populate=*`
+        )
+      ).json()
+
+      return {
+        banner: banners.data[0].attributes,
+      }
+    } catch (error) {
+      console.log(error)
+    }
   },
 }
 </script>

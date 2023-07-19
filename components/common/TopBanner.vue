@@ -1,10 +1,14 @@
 <template>
   <div class="section-topbanner">
     <div class="image-container">
-      <img :alt="title" src="@/assets/images/topbanner.jpg" />
+      <img
+        v-if="coverImageUrl(banner)"
+        :src="coverImageUrl(banner)"
+        :alt="coverImageAlt(banner)"
+      />
       <div class="text">
-        <h2 class="title">{{ title }}</h2>
-        <span class="subtitle">{{ subtitle }}</span>
+        <h2 class="title">{{ banner.title }}</h2>
+        <span class="subtitle">{{ banner.subtitle }}</span>
       </div>
     </div>
   </div>
@@ -13,13 +17,22 @@
 <script>
 export default {
   props: {
-    title: {
-      type: String,
+    banner: {
+      type: Object,
       required: true,
     },
-    subtitle: {
-      type: String,
-      required: true,
+  },
+
+  methods: {
+    coverImageUrl(banner) {
+      const url = this.$store.state.url
+      const imagePath = banner.image.data.attributes.url
+      return url + imagePath
+    },
+
+    coverImageAlt(banner) {
+      const alt = banner.image.data.attributes.alternativeText
+      return alt || 'Top Banner Image'
     },
   },
 }

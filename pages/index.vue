@@ -27,10 +27,8 @@ export default {
     BrandsSlider,
   },
 
-  // use destructuring to get the $strapi instance from context object
-  async asyncData({ $strapi, store }) {
+  async asyncData({ store }) {
     try {
-      // fetch data from strapi
       const fullbannerBanners = await (
         await fetch(`${store.state.apiUrl}/home-fullbanners?populate=*`)
       ).json()
@@ -61,9 +59,6 @@ export default {
       ).json()
       /* eslint-disable no-useless-escape */
 
-      // make the fetched data available in the page
-      // also, return the .data property of the entities where
-      // the data we need is stored
       return {
         fullbannerBanners: fullbannerBanners.data,
         brands: brands.data,

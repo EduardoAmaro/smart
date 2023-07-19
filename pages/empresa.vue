@@ -1,9 +1,6 @@
 <template>
   <main>
-    <TopBanner
-      title="Sobre nós"
-      subtitle="Smart Abrasivos Industriais: soluções de alto desempenho para o seu negócio."
-    />
+    <TopBanner :banner="banner" />
     <CompanyContent />
     <FullbannerFooter />
   </main>
@@ -19,6 +16,20 @@ export default {
     TopBanner,
     CompanyContent,
     FullbannerFooter,
+  },
+
+  async asyncData({ store }) {
+    try {
+      const banners = await (
+        await fetch(`${store.state.apiUrl}/empresa-top-banners?&populate=*`)
+      ).json()
+
+      return {
+        banner: banners.data[0].attributes,
+      }
+    } catch (error) {
+      console.log(error)
+    }
   },
 }
 </script>
