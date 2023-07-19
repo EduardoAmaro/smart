@@ -1,17 +1,47 @@
 <template>
   <div class="section section-fullbanner">
     <div class="image-container">
-      <img alt="Sobre Nós" src="@/assets/images/fullbannersobrenos.jpg" />
+      <img
+        v-if="coverImageUrl(fullbanner)"
+        :src="coverImageUrl(fullbanner)"
+        :alt="coverImageAlt(fullbanner)"
+      />
       <div class="text">
-        <h2 class="title">Smart Abrasivos Industriais</h2>
-        <span class="subtitle"
-          >Conheça nossas soluções. Solicite nosso contato.</span
-        >
-        <button class="main-button thicker">Fale Conosco</button>
+        <h2 class="title">{{ fullbanner.title }}</h2>
+        <span class="subtitle">{{ fullbanner.subtitle }}</span>
+        <NuxtLink :to="fullbanner.buttonLink">
+          <button class="main-button thicker">
+            {{ fullbanner.buttonText }}
+          </button>
+        </NuxtLink>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    fullbanner: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  methods: {
+    coverImageUrl(fullbanner) {
+      const url = this.$store.state.url
+      const imagePath = fullbanner.image.data.attributes.url
+      return url + imagePath
+    },
+
+    coverImageAlt(fullbanner) {
+      const alt = fullbanner.image.data.attributes.alternativeText
+      return alt || 'Top Banner Image'
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .section-fullbanner {
