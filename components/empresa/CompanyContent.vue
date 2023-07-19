@@ -3,65 +3,60 @@
     <div class="container-fluid">
       <div class="content-wrapper">
         <div class="text-wrapper">
-          <h2 class="title">Subtítulo</h2>
-          <div class="subtitle">
-            <p>
-              A Smart Abrasivos Industriais é uma empresa focada no fornecimento
-              de soluções de qualidade para processos produtivos do mercado
-              industrial. Nascida em meio ao polo industrial de Caxias do Sul, a
-              Smart comercializa seus produtos para todo o país.
-            </p>
-            <p>
-              Com o objetivo de gerar soluções que otimizem a relação
-              custo-benefício de seus clientes, a SMART tem em sua proposta de
-              valor o oferecimento de produtos que gerem eficácia operacional e
-              ganho de produtividade.
-            </p>
-            <p>
-              Nosso objetivo é solucionar problemas e aumentar a produtividade
-              de nossos clientes, encontrando melhorias através de abrasivos e
-              químicos industriais de alta performance. Para isso, a Smart conta
-              com uma equipe de profissionais com alto grau de conhecimento de
-              mercado e entendimento técnico de produtos e processos.
-            </p>
-            <p>
-              Nós somos a Smart Abrasivos e estamos prontos para atender as
-              necessidades da indústria em qualidade e eficácia, entre em
-              contato com a gente e descubra como podemos ajudar a sua empresa!
-            </p>
-          </div>
+          <h2 class="title">{{ content.title }}</h2>
+          <div class="subtitle" v-html="$md.render(content.text)"></div>
         </div>
         <div class="banner-wrapper">
           <div class="image-banner">
-            <img alt="imagem" src="@/assets/images/bannersobrenos.jpg" />
+            <img
+              v-if="coverImageUrl(contentBanner)"
+              :src="coverImageUrl(contentBanner)"
+              :alt="coverImageAlt(contentBanner)"
+            />
           </div>
           <div class="text-banner">
-            <h4 class="uppertitle">Título superior</h4>
-            <h3 class="title">Título da seção</h3>
+            <h4 class="uppertitle">{{ contentBanner.uppertitle }}</h4>
+            <h3 class="title">{{ contentBanner.title }}</h3>
             <p class="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a
-              dapibus felis, eu vulputate lectus. Integer pellentesque malesuada
-              tellus, id hendrerit tortor pulvinar eu.
+              {{ contentBanner.description }}
             </p>
           </div>
         </div>
         <div class="text-wrapper">
-          <div class="subtitle">
-            <p>
-              A Smart Abrasivos Industriais é uma empresa focada no fornecimento
-              de soluções de qualidade para processos produtivos do mercado
-              industrial. Nascida em meio ao polo industrial de Caxias do Sul, a
-              Smart comercializa seus produtos para todo o país. Com o objetivo
-              de gerar soluções que otimizem a relação custo-benefício de seus
-              clientes, a SMART tem em sua proposta de valor o oferecimento de
-              produtos que gerem eficácia operacional e ganho de produtividade.
-            </p>
-          </div>
+          <div class="subtitle" v-html="$md.render(content.inferiorText)"></div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    content: {
+      type: Object,
+      required: true,
+    },
+    contentBanner: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  methods: {
+    coverImageUrl(banner) {
+      const url = this.$store.state.url
+      const imagePath = banner.image.data.attributes.url
+      return url + imagePath
+    },
+
+    coverImageAlt(banner) {
+      const alt = banner.image.data.attributes.alternativeText
+      return alt || 'Top Banner Image'
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .section-content {
