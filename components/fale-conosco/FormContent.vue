@@ -3,9 +3,9 @@
     <div class="container-fluid">
       <div class="form-wrapper">
         <div class="text">
-          <h2 class="title">Solicite nosso contato</h2>
+          <h2 class="title">{{ content.title }}</h2>
           <span class="subtitle">
-            Deixe suas informações abaixo que em breve entraremos em contato!
+            {{ content.text }}
           </span>
         </div>
         <div class="form-container">
@@ -104,6 +104,13 @@
 
 <script>
 export default {
+  props: {
+    content: {
+      type: Object,
+      required: true,
+    },
+  },
+
   data() {
     return {
       name: '',

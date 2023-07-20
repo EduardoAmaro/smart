@@ -1,8 +1,8 @@
 <template>
   <main>
     <TopBanner :banner="banner" />
-    <FormContent />
-    <WhereToFindBanner />
+    <FormContent :content="content" />
+    <WhereToFindBanner :content="content" />
   </main>
 </template>
 
@@ -26,8 +26,13 @@ export default {
         )
       ).json()
 
+      const contents = await (
+        await fetch(`${store.state.apiUrl}/fale-conosco-contents?&populate=*`)
+      ).json()
+
       return {
         banner: banners.data[0].attributes,
+        content: contents.data[0].attributes,
       }
     } catch (error) {
       console.log(error)

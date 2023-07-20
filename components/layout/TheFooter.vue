@@ -18,13 +18,15 @@
         </nav>
         <div class="contact-container">
           <span class="title">Contato</span>
-          <a class="email" :href="`mailto:${contact.email}`">
+          <a :href="`mailto:${contact.email}`" target="_blank">
             <p>{{ contact.email }}</p>
           </a>
-          <a class="fone" :href="`tel:${contact.phone}`">
+          <a :href="`tel:${contact.phone}`" target="_blank">
             <p>{{ contact.phone }}</p>
           </a>
-          <p>{{ contact.address }}</p>
+          <a :href="contact.addressLink" target="_blank">
+            <p>{{ contact.address }}</p>
+          </a>
           <div class="social-logos">
             <SocialLogos
               v-for="social in socials"

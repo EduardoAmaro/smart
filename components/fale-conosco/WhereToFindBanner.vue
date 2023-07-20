@@ -6,14 +6,17 @@
           <img alt="imagem" src="@/assets/images/wheretofind.jpg" />
         </div>
         <div class="text-banner">
-          <h4 class="uppertitle">Título superior</h4>
-          <h3 class="title">Onde nos encontrar</h3>
-          <p>comercial@smartabrasivos.com.br</p>
-          <p>(54) 3013-3040</p>
-          <p>
-            R. Natal Chiarelo, 481 - Desvio Rizzo - Caxias do Sul - RS - Brasil,
-            95012-663
-          </p>
+          <h4 class="uppertitle">{{ content.bannerUppertitle }}</h4>
+          <h3 class="title">{{ content.bannerTitle }}</h3>
+          <a :href="`mailto:${contactData.email}`" target="_blank">
+            <p>{{ contactData.email }}</p>
+          </a>
+          <a :href="`tel:${contactData.phone}`" target="_blank">
+            <p>{{ contactData.phone }}</p>
+          </a>
+          <a :href="contactData.addressLink" target="_blank">
+            <p>{{ contactData.address }}</p>
+          </a>
           <div class="social-logos">
             <SocialLogos
               v-for="social in socialData"
@@ -35,9 +38,19 @@ export default {
     SocialLogos,
   },
 
+  props: {
+    content: {
+      type: Object,
+      required: true,
+    },
+  },
+
   computed: {
     socialData() {
       return this.$store.state.socialData.data
+    },
+    contactData() {
+      return this.$store.state.contactData.data.attributes
     },
   },
 }
@@ -81,6 +94,10 @@ export default {
       .title {
         font-size: $font-size-lg;
         margin-bottom: 27px;
+      }
+
+      a:hover {
+        color: $orange-color;
       }
 
       p {
