@@ -35,10 +35,13 @@
             />
           </div>
         </div>
-        <!-- todo -->
         <div class="text-container">
           <h2 class="title">Baixe nosso catálogo</h2>
-          <button class="main-button thicker">Clique aqui</button>
+          <CatalogFile
+            :catalog="catalog"
+            button-text="Clique aqui"
+            :thicker="true"
+          />
         </div>
       </div>
       <div class="footer-bottom">
@@ -50,10 +53,12 @@
 
 <script>
 import SocialLogos from '~/components/common/SocialLogos'
+import CatalogFile from '~/components/common/CatalogFile'
 
 export default {
   components: {
     SocialLogos,
+    CatalogFile,
   },
 
   props: {
@@ -67,6 +72,10 @@ export default {
     },
     menus: {
       type: Array,
+      required: true,
+    },
+    catalog: {
+      type: Object,
       required: true,
     },
   },

@@ -24,7 +24,11 @@
           </ul>
         </nav>
         <div class="button-container">
-          <button class="main-button">Baixe o catálogo</button>
+          <CatalogFile
+            :catalog="catalog"
+            button-text="Baixe o catálogo"
+            :thicker="false"
+          />
         </div>
       </div>
     </div>
@@ -33,10 +37,19 @@
 
 <script>
 import SmartLogo from '~/assets/svg/smartlogo.svg?inline'
+import CatalogFile from '~/components/common/CatalogFile'
 
 export default {
   components: {
     SmartLogo,
+    CatalogFile,
+  },
+
+  props: {
+    catalog: {
+      type: Object,
+      required: true,
+    },
   },
 }
 </script>

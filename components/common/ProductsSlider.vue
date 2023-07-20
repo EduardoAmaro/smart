@@ -44,10 +44,6 @@ export default {
     document.querySelectorAll('.swiper-products').forEach((swiper, index) => {
       swiper.classList.add('i-' + index)
 
-      console.log(
-        swiper.parentElement.getElementsByClassName('button-products-prev')
-      )
-
       swiper.parentElement
         .getElementsByClassName('swiper-button-prev')[0]
         .classList.add('btn-prev-' + index)

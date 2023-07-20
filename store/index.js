@@ -5,6 +5,7 @@ export const state = () => ({
   contactData: null,
   socialData: null,
   footerMenusData: null,
+  catalogData: null,
 })
 
 export const mutations = {
@@ -16,5 +17,8 @@ export const mutations = {
   },
   setFooterMenusData(state, data) {
     state.footerMenusData = data
+  },
+  setCatalogData(state, data) {
+    state.catalogData = data
   },
 }

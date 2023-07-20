@@ -3,7 +3,6 @@
     <div class="container-fluid">
       <div class="newsletter-wrapper">
         <div class="text">
-          <!-- todo -->
           <h2 class="title">
             <strong>Cadastre-se</strong> e <br />
             receba todas as <strong>novidades!</strong>
