@@ -1,7 +1,7 @@
 <template>
   <main>
     <HomeSlider :banners="fullbannerBanners" />
-    <FullbannerStrip />
+    <FullbannerStrip :strip="fullbannerStrip" />
     <IconsBanner :banners="iconBanners" />
     <ProductsSlider :tag="tags[0].attributes" :products="taggedProducts" />
     <MirroredBanners :banners="mirroredBanners" />
@@ -33,6 +33,10 @@ export default {
         await fetch(`${store.state.apiUrl}/home-fullbanners?populate=*`)
       ).json()
 
+      const fullbannerStrips = await (
+        await fetch(`${store.state.apiUrl}/home-fullbanner-strips?populate=*`)
+      ).json()
+
       const brands = await (
         await fetch(`${store.state.apiUrl}/home-brand-swippers?populate=*`)
       ).json()
@@ -61,6 +65,7 @@ export default {
 
       return {
         fullbannerBanners: fullbannerBanners.data,
+        fullbannerStrip: fullbannerStrips.data[0].attributes,
         brands: brands.data,
         iconBanners: iconBanners.data,
         mirroredBanners: mirroredBanners.data,
