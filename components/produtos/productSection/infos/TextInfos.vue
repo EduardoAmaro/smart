@@ -4,10 +4,7 @@
       {{ product.brand }}
     </h3>
     <h1 class="title">{{ product.name }}</h1>
-    <!-- todo -->
-    <p class="description">
-      {{ product.description }}
-    </p>
+    <div class="description" v-html="$md.render(product.description)"></div>
   </div>
 </template>
 
@@ -43,7 +40,10 @@ export default {
     .description {
       font-size: $font-size-ml;
       line-height: 120%;
-      margin-bottom: 15px;
+
+      p {
+        margin-bottom: 15px;
+      }
     }
   }
 }
