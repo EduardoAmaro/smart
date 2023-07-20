@@ -2,29 +2,23 @@
   <div class="section section-tecnical-content">
     <div class="container-fluid">
       <div class="text-wrapper">
-        <h2 class="title">Subtítulo</h2>
-        <div class="subtitle">
-          <p>
-            A partir de uma equipe especializada, a Smart Abrasivos Industriais
-            disponibiliza o trabalho de acompanhamento e consultoria para a
-            solução de necessidades de seus clientes com cobertura física em
-            todo o Rio Grande do Sul.
-          </p>
-          <p>
-            Com vasta experiência de mercado, a equipe técnica da Smart
-            Abrasivos Industriais desenvolve com seus clientes estudos e
-            sugestões de melhor custo-benefício para cada operação específica.
-          </p>
-          <p>
-            Se a sua empresa necessita de apoio para encontrar as melhores
-            soluções para o seu negócio, solicite um contato e uma visita
-            técnica da Smart Abrasivos Industriais.
-          </p>
-        </div>
+        <h2 class="title">{{ content.title }}</h2>
+        <div class="subtitle" v-html="$md.render(content.text)"></div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    content: {
+      type: Object,
+      required: true,
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .section-tecnical-content {
