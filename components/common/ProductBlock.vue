@@ -32,6 +32,7 @@
         <h4 class="subtitle" :style="'color: ' + product.color">
           {{ product.brand }}
         </h4>
+        <!-- todo -->
         <p class="description">
           {{ product.description }}
         </p>

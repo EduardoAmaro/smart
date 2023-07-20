@@ -35,6 +35,7 @@
             />
           </div>
         </div>
+        <!-- todo -->
         <div class="text-container">
           <h2 class="title">Baixe nosso catálogo</h2>
           <button class="main-button thicker">Clique aqui</button>

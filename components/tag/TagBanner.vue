@@ -5,6 +5,7 @@
         <h2 class="title">{{ tag.title }}</h2>
       </div>
       <div class="image-container">
+        <!-- todo -->
         <img alt="" src="@/assets/images/rhodius.png" />
       </div>
     </div>

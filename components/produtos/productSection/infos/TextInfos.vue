@@ -4,6 +4,7 @@
       {{ product.brand }}
     </h3>
     <h1 class="title">{{ product.name }}</h1>
+    <!-- todo -->
     <p class="description">
       {{ product.description }}
     </p>

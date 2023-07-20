@@ -2,6 +2,7 @@
   <div class="section-strip">
     <div class="container-fluid">
       <div class="strip-wrapper">
+        <!-- todo -->
         <div class="text-container">
           <span>conheça nossas soluções. solicite nosso contato.</span>
         </div>
