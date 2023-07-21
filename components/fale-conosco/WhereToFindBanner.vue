@@ -3,7 +3,11 @@
     <div class="container-fluid">
       <div class="banner-wrapper">
         <div class="image-banner">
-          <img alt="imagem" src="@/assets/images/wheretofind.jpg" />
+          <img
+            v-if="coverImageUrl(content)"
+            :src="coverImageUrl(content)"
+            :alt="coverImageAlt(content)"
+          />
         </div>
         <div class="text-banner">
           <h4 class="uppertitle">{{ content.bannerUppertitle }}</h4>
@@ -51,6 +55,19 @@ export default {
     },
     contactData() {
       return this.$store.state.contactData.data.attributes
+    },
+  },
+
+  methods: {
+    coverImageUrl(banner) {
+      const url = this.$store.state.url
+      const imagePath = banner.image.data.attributes.url
+      return url + imagePath
+    },
+
+    coverImageAlt(banner) {
+      const alt = banner.image.data.attributes.alternativeText
+      return alt || 'Onde Encontrar Imagem'
     },
   },
 }

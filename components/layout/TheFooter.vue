@@ -4,7 +4,7 @@
       <div class="footer-wrapper">
         <div class="logo-container">
           <a href="/">
-            <img alt="logo" src="@/assets/images/smart-white-logo.png" />
+            <img alt="logo" src="@/assets/images/solinte-removebg.png" />
           </a>
         </div>
         <nav class="menu-desktop">
@@ -110,6 +110,11 @@ export default {
 
     .logo-container {
       display: flex;
+
+      img {
+        max-width: 275px;
+        height: auto;
+      }
     }
 
     .menu-desktop {
