@@ -32,6 +32,8 @@
         <h4 class="subtitle" :style="'color: ' + product.color">
           {{ product.brand }}
         </h4>
+        <!-- todo -->
+        <!-- descrição reduzida -->
         <div class="description" v-html="$md.render(product.description)"></div>
       </div>
     </div>
