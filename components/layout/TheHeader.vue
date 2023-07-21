@@ -7,6 +7,7 @@
             <SmartLogo />
           </NuxtLink>
         </div>
+        <!-- todo -->
         <nav class="menu-desktop">
           <ul class="menu">
             <li class="item">
