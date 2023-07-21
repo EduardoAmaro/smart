@@ -89,7 +89,7 @@ export default {
       }
 
       .main-button {
-        color: $dark-orange-color;
+        color: $dark-green-color;
 
         &:hover {
           color: $text-color;

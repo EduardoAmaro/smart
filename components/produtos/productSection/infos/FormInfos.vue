@@ -169,15 +169,10 @@ export default {
         gap: 10px;
         justify-content: center;
 
-        &.whatsapp {
-          &:hover {
-            color: $green-color;
-          }
-        }
-
+        &.whatsapp,
         &.email {
           &:hover {
-            color: $dark-orange-color;
+            color: $green-color;
           }
         }
 

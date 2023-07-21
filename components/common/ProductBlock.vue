@@ -116,14 +116,14 @@ export default {
         transition: 0.3s;
 
         &:hover {
-          color: $dark-orange-color;
+          color: $dark-green-color;
         }
       }
 
       .subtitle {
         text-transform: uppercase;
         margin: 0 0 5px;
-        color: $dark-orange-color;
+        color: $dark-green-color;
         font-size: $font-size-me;
       }
 

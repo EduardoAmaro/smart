@@ -70,7 +70,7 @@ export default {
         justify-content: center;
 
         .title {
-          color: $dark-orange-color;
+          color: $dark-green-color;
           text-transform: uppercase;
           font-size: $font-size-md;
           font-weight: 700;

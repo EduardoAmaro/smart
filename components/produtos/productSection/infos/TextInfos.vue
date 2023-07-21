@@ -28,7 +28,7 @@ export default {
     .uppertitle {
       text-transform: uppercase;
       font-size: $font-size-md;
-      color: $dark-orange-color;
+      color: $dark-green-color;
       font-weight: 700;
     }
 

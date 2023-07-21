@@ -173,7 +173,7 @@ export default {
 
         .main-button {
           margin-left: auto;
-          color: $dark-orange-color;
+          color: $dark-green-color;
           height: 50px;
           font-size: $font-size-ml;
           padding: 0 50px;

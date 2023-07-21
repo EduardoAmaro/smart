@@ -97,7 +97,7 @@ export default {
       }
 
       a:hover {
-        color: $orange-color;
+        color: $green-color;
       }
 
       p {
@@ -115,7 +115,7 @@ export default {
           width: 30px;
           height: 30px;
           &:hover {
-            color: $orange-color;
+            color: $green-color;
           }
         }
       }

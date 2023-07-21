@@ -137,7 +137,7 @@ export default {
           }
 
           &:hover {
-            color: $orange-color;
+            color: $green-color;
           }
         }
       }
@@ -151,7 +151,7 @@ export default {
 
       a {
         &:hover {
-          color: $orange-color;
+          color: $green-color;
         }
       }
 
@@ -193,7 +193,7 @@ export default {
         padding: 0 30px;
 
         &:hover {
-          color: $orange-color;
+          color: $green-color;
         }
       }
     }

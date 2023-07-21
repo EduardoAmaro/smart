@@ -46,7 +46,7 @@ export default {
       transition: 0.3s;
 
       &:hover {
-        color: $orange-color;
+        color: $green-color;
       }
     }
   }

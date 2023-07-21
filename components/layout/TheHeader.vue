@@ -93,7 +93,7 @@ export default {
           }
 
           &:hover {
-            color: $orange-color;
+            color: $green-color;
           }
         }
       }
@@ -109,7 +109,7 @@ export default {
         color: $white-color;
 
         &:hover {
-          color: $orange-color;
+          color: $green-color;
         }
       }
     }

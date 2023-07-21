@@ -77,7 +77,7 @@ export default {
         }
 
         &:hover {
-          color: $orange-color;
+          color: $green-color;
         }
       }
     }
